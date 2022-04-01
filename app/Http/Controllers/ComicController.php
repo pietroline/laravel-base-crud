@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view("comics.create");
     }
 
     /**
@@ -36,7 +36,12 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newComic = [$data["src"], $data["title"], $data["price"], $data["series"], $data["sale_date"], $data["type"], $data["description"]];
+
+       config("comics")[] = $newComic;
+
+       dd(config("comics"));
     }
 
     /**
@@ -52,7 +57,7 @@ class ComicController extends Controller
 
         return view("comics.show", compact("comic"));
 
-        //nel caso del bonus, prelevando il fumetto da database è necessaria un codice simi al seguente
+        //nel caso del bonus, prelevando il fumetto da database è necessaria un codice simile al seguente
         // $comic = Comic::find($id);
 
         // if($comic){

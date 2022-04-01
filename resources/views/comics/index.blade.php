@@ -4,6 +4,14 @@
         
 @section('content')
     <div class="container">
+
+
+        {{-- sistemare codice e  css della pagina --}}
+
+       <div class="d-flex justify-content-center my-5">
+            <a class="btn btn-primary text-white" href="{{route('comics.create')}}" role="button">Aggiungi Fumetto</a>
+       </div>
+
         <div class="row">
 
 
