@@ -11,7 +11,7 @@
                 
             @foreach ($comics as $key => $comic)
  
-                <a href="#" class="card m-3 text-decoration-none text-dark" style="width: 18rem;">
+                <a href="{{ route('comics.show', $key)}}" class="card m-3 text-decoration-none text-dark" style="width: 18rem;">
                     <img src="{{$comic['thumb']}}" alt="'img DC type ' + {{$comic['type']}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$comic['title']}}</h5>

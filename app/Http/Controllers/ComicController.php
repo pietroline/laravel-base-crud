@@ -47,7 +47,22 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        //
+        $comics = config("comics");
+        $comic = $comics[$id];
+
+        return view("comics.show", compact("comic"));
+
+        //nel caso del bonus, prelevando il fumetto da database è necessaria un codice simi al seguente
+        // $comic = Comic::find($id);
+
+        // if($comic){
+
+        //     return view("comic.show", compact("comic"));
+
+        // }else{
+        //     abort(404);
+        // }
+
     }
 
     /**
