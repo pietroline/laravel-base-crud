@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home"); //sezione home del sito
+
+Route::resource("comics", "ComicController"); //sezione fumetti del sito
