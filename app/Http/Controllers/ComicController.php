@@ -36,12 +36,12 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $newComic = [$data["src"], $data["title"], $data["price"], $data["series"], $data["sale_date"], $data["type"], $data["description"]];
+    //     $data = $request->all();
+    //     $newComic = [$data["src"], $data["title"], $data["price"], $data["series"], $data["sale_date"], $data["type"], $data["description"]];
 
-       config("comics")[] = $newComic;
+    //    config("comics")[] = $newComic;
 
-       dd(config("comics"));
+    //    dd(config("comics"));
     }
 
     /**
