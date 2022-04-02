@@ -6,17 +6,15 @@
     <div class="container">
 
 
-        <div class="row d-flex justify-content-center py-5">
-            <div class="col">
+        <div class="row">
+            <div class="col d-flex justify-content-center py-5">
                 <a class="btn btn-primary text-white" href="{{route('comics.create')}}" role="button">Aggiungi Fumetto</a>
             </div>
         </div>
 
-        <div class="row row-cols-3">
+        <div class="row row-cols-4">
 
 
-
-                
             @foreach ($comics as $comic)
  
                <div class="col card-group">

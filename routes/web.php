@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home.home');
+    return view('web.home');
 })->name("home"); //sezione home del sito
 
-Route::resource("comics", "ComicController"); //sezione fumetti del sito
+Route::get('chiSiamo', function () {
+    return view('web.chiSiamo');
+})->name("chiSiamo"); //sezione home del sito
+
+Route::get('contattaci', function () {
+    return view('web.contattaci');
+})->name("contattaci"); //sezione home del sito
+
+Route::resource("comics", "ComicController"); //sezione comics del sito

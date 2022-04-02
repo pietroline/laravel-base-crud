@@ -10,7 +10,7 @@
     <div class="container" style="height:100vw">
 
 
-        <div class="row">
+        <div class="row py-5">
             <div class="col">
                 <h1>Compila i dati per il fumetto da aggiungere</h1>
             </div>
