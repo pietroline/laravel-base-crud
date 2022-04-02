@@ -10,6 +10,8 @@
         {{-- link css generali compreso bootstrap--}}
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+        {{-- link css specifici --}}
+        @yield("cssStyle")
     </head>
 
     <body>

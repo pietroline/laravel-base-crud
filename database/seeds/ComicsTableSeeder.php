@@ -25,8 +25,8 @@ class ComicsTableSeeder extends Seeder
 
             $date = strtotime($comic["sale_date"]);
             $newFormat = date("Y-m-d", $date);
+            $paper->sale_date = $newFormat;
 
-            $paper->date = $newFormat;
             $paper->type = $comic["type"];
             $paper->description = $comic["description"];
 

@@ -3,11 +3,11 @@
 @section("pageTitle", "Home")
         
 @section('content')
+    <div class="container" style="height:100vw;">
+        <div class="row">
 
-   
-    <div class="container">
-        <h1>Questa è la pagina Home</h1>
+            <h1 class="fw-bold">Questa è la pagina Home</h1>
+            
+        </div>
     </div>      
-   
-
 @endsection

@@ -2,7 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import 'partials/_variables';
+
+//Common
+@import 'partials/_common';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+main{
+    background-image: url("../img/background1.jpg");
+    background-repeat: repeat-y;
+    background-size: contain;   
+
+    width: 100%;
+
+
+}
+

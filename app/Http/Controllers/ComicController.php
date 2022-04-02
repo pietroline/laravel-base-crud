@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comic;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -13,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = config("comics");
+        $comics = Comic::all();
         return view("comics.index", compact("comics"));
 
     }
@@ -36,12 +37,25 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-    //     $data = $request->all();
-    //     $newComic = [$data["src"], $data["title"], $data["price"], $data["series"], $data["sale_date"], $data["type"], $data["description"]];
+        $data = $request->all();
+    
+        $comic = new Comic();
+        // $comic->title = $data["title"];
+        // $comic->description = $data["description"];
+        // $comic->thumb = $data["thumb"];
+        // $comic->price = $data["price"];
+        // $comic->series = $data["series"];
+        // $comic->sale_date = $data["sale_date"];
+        // $comic->type = $data["type"];
 
-    //    config("comics")[] = $newComic;
+        // sintassi alternativa, bisogna andare nel model (Comic) 
+        //e aggiungere quelli che sono i campi fillable (per questioni di sicurezza)
+        $comic->fill($data);
 
-    //    dd(config("comics"));
+        $comic->save();
+
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
+
     }
 
     /**
@@ -51,22 +65,17 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $comics = config("comics");
-        $comic = $comics[$id];
+    {       
 
-        return view("comics.show", compact("comic"));
+        $comic = Comic::find($id);
 
-        //nel caso del bonus, prelevando il fumetto da database è necessaria un codice simile al seguente
-        // $comic = Comic::find($id);
+        if($comic){
 
-        // if($comic){
+            return view("comics.show", compact("comic"));
 
-        //     return view("comic.show", compact("comic"));
-
-        // }else{
-        //     abort(404);
-        // }
+        }else{
+            abort(404);
+        }
 
     }
 
