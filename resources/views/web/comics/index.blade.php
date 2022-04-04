@@ -22,6 +22,7 @@
             @foreach ($comics as $comic)
  
                <div class="col card-group d-flex flex-column my-5">
+
                     <a href="{{ route('comics.show', $comic->id)}}" class="card m-3 text-decoration-none text-dark">
                         <img src="{{$comic['thumb']}}" alt="'img DC type ' + {{$comic['type']}}">
                         <div class="card-body">
@@ -32,7 +33,19 @@
                             <div><strong>Type: </strong> {{$comic['type']}}</div>
                         </div>
                     </a>
-                    <a class="btn btn-warning ms_btn" href="{{route('comics.edit', $comic->id)}}" role="button">Modifica</a>
+
+                    <a class="btn btn-warning ms_negative_margin_top mx-3" href="{{route('comics.edit', $comic->id)}}" role="button">Modifica</a>
+                    
+                    <form class="d-grid" method="POST" action="{{route('comics.destroy', $comic->id)}}">
+                        {{-- meccanismo di sicurezza--}}
+                        @csrf
+
+                        {{-- metodo DELETE di POST --}}
+                        @method("DELETE")
+
+                        <button class="btn btn-danger mx-3" role="button">Elimina</button>
+                    </form>
+                    
                </div>
                   
             @endforeach
