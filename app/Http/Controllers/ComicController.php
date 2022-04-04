@@ -37,6 +37,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                "thumb" => "required | url",
+                "title" => "required | min:5",
+                "price" => "required | numeric | min: 0",
+                "series" => "required | min:5",
+                "sale_date" => "required | date",
+                "type" => "required | min:5",
+                "description" => "required | min:20",
+            ]
+        );
+
         $data = $request->all();
     
         $comic = new Comic();
@@ -54,7 +67,7 @@ class ComicController extends Controller
 
         $comic->save();
 
-        return redirect()->route('comics.show', ['comic' => $comic->id]);
+        return redirect()->route('comics.show', ['comic' => $comic->id])->with('status', 'Fumetto caricato correttamente!');;
 
     }
 
@@ -102,11 +115,25 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        $request->validate(
+            [
+                "thumb" => "required | url",
+                "title" => "required | min:5",
+                "price" => "required | numeric | min: 0",
+                "series" => "required | min:5",
+                "sale_date" => "required | date",
+                "type" => "required | min:5",
+                "description" => "required | min:20",
+            ]
+        );
+
+
         // con dependency injection 
         $data = $request->all();
         $comic->update($data);
 
-        return redirect()->route("comics.show", $comic->id);
+        return redirect()->route("comics.show", $comic->id)->with('status', 'Fumetto aggiornato correttamente!');;
     }
 
     /**
@@ -120,6 +147,6 @@ class ComicController extends Controller
         // con dependency injection 
         $comic->delete();
         
-        return redirect()->route("comics.index");
+        return redirect()->route("comics.index")->with('status', 'Fumetto eliminato correttamente');;
     }
 }

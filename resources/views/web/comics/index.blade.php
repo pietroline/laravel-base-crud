@@ -7,7 +7,7 @@
 @endsection
         
 @section('content')
-    <div class="container" style="height:100vw">
+    <div class="container">
 
 
         <div class="row">

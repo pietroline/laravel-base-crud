@@ -16,8 +16,27 @@
     </head>
 
     <body>
-        
+       
         @include("partials/header") 
+
+        {{-- redirecting width flashed sesseion data --}}
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
+
+        {{-- catch validation error--}}
+        @if ($errors->any())
+            <div class="aler alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <main>
             @yield('content')

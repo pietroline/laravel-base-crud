@@ -27,37 +27,37 @@
                     
                     <div class="mb-3 w-50 fw-bold">
                         <label for="thumb" class="form-label" >Indirizzo immagine</label>
-                        <input required type="text" class="form-control" id="thumb" name="thumb" value="">
+                        <input required type="text" class="form-control" id="thumb" name="thumb" value="{{old('thumb')}}">
                     </div>
         
                     <div class="mb-3 w-50 fw-bold">
                         <label for="title" class="form-label" >Titolo fumetto</label>
-                        <input require type="text" class="form-control" id="title" name="title" value="">
+                        <input require type="text" class="form-control" id="title" name="title" value="{{old('title')}}">
                     </div>
         
                     <div class="mb-3 w-50 fw-bold">
                         <label for="price" class="form-label" >Prezzo</label>
-                        <input require type="number" step=".01" class="form-control" id="price" name="price" value="">
+                        <input require type="number" step=".01" class="form-control" id="price" name="price" value="{{old('price')}}">
                     </div>
         
                     <div class="mb-3 w-50 fw-bold">
                         <label for="series" class="form-label">Serie</label>
-                        <input require type="text" class="form-control" id="series" name="series" value="">
+                        <input require type="text" class="form-control" id="series" name="series" value="{{old('series')}}">
                     </div>
         
                     <div class="mb-3 w-50 fw-bold">
                         <label for="sale_date" class="form-label" >Data di vendita</label>
-                        <input require type="text" class="form-control" id="sale_date" name="sale_date" value="">
+                        <input require type="date" class="form-control" id="sale_date" name="sale_date" value="{{old('sale_date')}}">
                     </div>
         
                     <div class="mb-3 w-50 fw-bold">
                         <label for="type" class="form-label" >Tipo</label>
-                        <input require type="text" class="form-control" id="type" name="type" value="">
+                        <input require type="text" class="form-control" id="type" name="type" value="{{old('type')}}">
                     </div>
         
                     <label for="description" class="form-label fw-bold fer" >Descizione</label>
                     <div class="form-floating">
-                        <textarea require class="form-control w-50" placeholder="Descrizione" id="description" name="description"></textarea>
+                        <textarea require class="form-control w-50" placeholder="Descrizione" id="description" name="description">{{old('description')}}</textarea>
                     </div>
         
                     <button type="submit" class="btn btn-primary mt-5">Invia</button>
