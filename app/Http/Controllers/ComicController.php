@@ -87,7 +87,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        // questa volta ho usato la Dependency injection,
+        // questa volta ho usato la dependency injection,
         // per una sintassi alternativa che non faccia uso della Dependency injection
         // vedi il metodo show 
         return view("web.comics.edit", compact("comic"));
@@ -102,8 +102,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // con dependency injection 
         $data = $request->all();
-
         $comic->update($data);
 
         return redirect()->route("comics.show", $comic->id);
