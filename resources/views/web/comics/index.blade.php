@@ -1,6 +1,10 @@
 @extends("layouts.base")
 
 @section("pageTitle", "Fumetti disponibili")
+
+@section("cssStyle")
+    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+@endsection
         
 @section('content')
     <div class="container">
@@ -17,7 +21,7 @@
 
             @foreach ($comics as $comic)
  
-               <div class="col card-group">
+               <div class="col card-group d-flex flex-column my-5">
                     <a href="{{ route('comics.show', $comic->id)}}" class="card m-3 text-decoration-none text-dark">
                         <img src="{{$comic['thumb']}}" alt="'img DC type ' + {{$comic['type']}}">
                         <div class="card-body">
@@ -28,6 +32,7 @@
                             <div><strong>Type: </strong> {{$comic['type']}}</div>
                         </div>
                     </a>
+                    <a class="btn btn-warning ms_btn" href="{{route('comics.edit', $comic->id)}}" role="button">Modifica</a>
                </div>
                   
             @endforeach

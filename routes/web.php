@@ -17,12 +17,12 @@ Route::get('/', function () {
     return view('web.home');
 })->name("home"); //sezione home del sito
 
-Route::get('chiSiamo', function () {
+Route::get('/chiSiamo', function () {
     return view('web.chiSiamo');
 })->name("chiSiamo"); //sezione home del sito
 
-Route::get('contattaci', function () {
+Route::get('/contattaci', function () {
     return view('web.contattaci');
 })->name("contattaci"); //sezione home del sito
 
-Route::resource("comics", "ComicController"); //sezione comics del sito
+Route::resource("/comics", "ComicController"); //sezione comics del sito
