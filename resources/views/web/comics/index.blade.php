@@ -24,7 +24,7 @@
                <div class="col card-group d-flex flex-column my-5">
 
                     <a href="{{ route('comics.show', $comic->id)}}" class="card m-3 text-decoration-none text-dark">
-                        <img src="{{$comic['thumb']}}" alt="'img DC type ' + {{$comic['type']}}">
+                        <img src="{{$comic['thumb']}}" alt="img DC type  {{$comic['title']}}">
                         <div class="card-body">
                             <h5 class="card-title"><strong>{{$comic['title']}}</strong></h5>
                             <div><strong>Price: </strong>{{$comic['price']}}$</div>
