@@ -12,6 +12,7 @@
 
         {{-- link css specifici --}}
         @yield("cssStyle")
+
     </head>
 
     <body>
@@ -25,6 +26,7 @@
 
         
 
+        
         <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     </body>
 

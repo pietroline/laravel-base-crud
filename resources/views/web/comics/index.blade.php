@@ -7,7 +7,7 @@
 @endsection
         
 @section('content')
-    <div class="container">
+    <div class="container" style="height:100vw">
 
 
         <div class="row">
@@ -36,7 +36,8 @@
 
                     <a class="btn btn-warning ms_negative_margin_top mx-3" href="{{route('comics.edit', $comic->id)}}" role="button">Modifica</a>
                     
-                    <form class="d-grid" method="POST" action="{{route('comics.destroy', $comic->id)}}">
+                    <form class="d-grid" method="POST" action="{{route('comics.destroy', $comic->id)}}" onsubmit="return checkDelete()">
+
                         {{-- meccanismo di sicurezza--}}
                         @csrf
 
@@ -44,6 +45,7 @@
                         @method("DELETE")
 
                         <button class="btn btn-danger mx-3" role="button">Elimina</button>
+
                     </form>
                     
                </div>

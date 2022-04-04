@@ -41120,7 +41120,14 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //funzione per la conferma di eliminazione di un fumetto
+
+
+function checkDelete() {
+  return confirm("Sei sicuro di voler eliminare il fumetto?");
+}
+
+window.checkDelete = checkDelete;
 
 /***/ }),
 
