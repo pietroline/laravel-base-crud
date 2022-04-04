@@ -26,7 +26,9 @@
                                 <a href="{{route('home')}}">Home</a>
                             </li>
     
-                            <li class="nav-item {{Request::route()->getname() == "comics.index" || Request::route()->getname() == "comics.show" ? 'ms_active' : ''}}">
+                            <li class="nav-item {{Request::route()->getname() == "comics.index" || 
+                                                    Request::route()->getname() == "comics.show" ||
+                                                     Request::route()->getname() == "comics.edit" ? 'ms_active' : ''}}">
                                 <a href="{{route('comics.index')}}">Comics</a>
                             </li>
     

@@ -8,6 +8,7 @@
           <div class="row py-4">
                <div class="col">
                     <a class="btn btn-primary text-white" href="{{route('comics.index')}}" role="button">Indietro</a>
+                    <a class="btn btn-warning ms_btn" href="{{route('comics.edit', $comic->id)}}" role="button">Modifica</a>
                </div>
           </div>
 
