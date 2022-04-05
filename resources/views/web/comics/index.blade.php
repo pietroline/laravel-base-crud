@@ -36,7 +36,7 @@
 
                     <a class="btn btn-warning ms_negative_margin_top mx-3" href="{{route('comics.edit', $comic->id)}}" role="button">Modifica</a>
                     
-                    <form class="d-grid" method="POST" action="{{route('comics.destroy', $comic->id)}}" onsubmit="return checkDelete()">
+                    <form class="d-grid" method="POST" action="{{route('comics.destroy', $comic->id)}}">
 
                         {{-- meccanismo di sicurezza--}}
                         @csrf
@@ -44,7 +44,7 @@
                         {{-- metodo DELETE di POST --}}
                         @method("DELETE")
 
-                        <button class="btn btn-danger mx-3" role="button">Elimina</button>
+                        <button class="btn btn-danger mx-3" role="button" onClick="return checkDelete()">Elimina</button>
 
                     </form>
                     
@@ -57,4 +57,8 @@
 
         </div>
     </div>      
+@endsection
+
+@section("scriptJs")
+    <script src="{{asset('js/comics/indexFunctions.js')}}" type="text/javascript"></script>    
 @endsection
